@@ -3,13 +3,11 @@
 ### Trends
 * Revenue
 * No. of customers
-* 
 
 ### Customers
 * Age, Sex, Location
 * Spending (average purchase value & distribution)
 * Frequency, recency
-* Social
 
 ### Products
 * Top/bottom selling

@@ -1,5 +1,5 @@
 ui <- dashboardPage(
-        dashboardHeader(title = "RDE - Retail Dashboard Example"),
+        dashboardHeader(title = "RetaileR"),
         dashboardSidebar(
                 sidebarMenu(
                         menuItem("Trends", tabName = "trends", icon = icon("line-chart")),
@@ -23,11 +23,10 @@ ui <- dashboardPage(
                                         )
                                 )
                         ),
-                        
-                        # Second tab content
                         tabItem(tabName = "data",
-                                h2("Widgets tab content")
-                        )
+                                h2("Transaction data"),
+                                dataTableOutput("raw.data.table")
+                                )
                 )
         )
         
