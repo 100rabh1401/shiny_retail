@@ -151,12 +151,13 @@ products_bought <- data.frame(
 
 
 ## Dates
-generate_dates<- function(N, st="2017/01/01", et="2017/12/31") {
-        st <- as.POSIXct(as.Date(st))
-        et <- as.POSIXct(as.Date(et))
+generate_dates<- function(N, st="2017-01-01", et="2017-12-31") {
+        st <- as.POSIXct(as.Date(st), format = "%Y-%m-%d")
+        et <- as.POSIXct(as.Date(et), format = "%Y-%m-%d")
         dt <- as.numeric(difftime(et,st,unit="sec"))
         ev <- sort(runif(N, 0, dt))
         rt <- st + ev
+        rt <- as.Date(rt,format = "%Y-%m-%d")
 }
 
 dates <- data.frame(
@@ -176,4 +177,5 @@ transactions <- data.frame(
 
 
 ### Write data to csv
-write_csv(transactions, "transactions.csv")
+write_csv(transactions, "./src/data/transactions.csv")
+write_rds(transactions, "./src/data/transactions.rds")
